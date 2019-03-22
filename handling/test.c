@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/18 13:28:29 by jblue-da          #+#    #+#             */
-/*   Updated: 2019/03/22 12:02:47 by nparker          ###   ########.fr       */
+/*   Created: 2019/03/22 14:54:16 by nparker           #+#    #+#             */
+/*   Updated: 2019/03/22 15:00:05 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdio.h>
+#include "../other/libft/libft.h"
 
-int					ft_printf(char *format, ...)
+char		*ft_plus_first(int nb)
 {
-	size_t			len;
-	va_list			args;
-	t_fs_vector		form_strings;
+	char*	str;
+	char*	temp;
 
-	va_start(args, format);
-	fs_parse(format, &form_strings);
-	prepare(&form_strings);
-	handler(&args, &form_strings, &format);
-	len = ft_strlen(format);
-	write(1, format, len);
-	return ((int)len);
+    str = (char*)malloc(sizeof(char) * ft_count_digits(nb) + 2);
+	temp = ft_itoa(nb);
+	str[0] = '+';
+	ft_strcat(str, temp);
+	return (str);
+}
+
+int main()
+{
+	int i = 0;
+	printf("%s", ft_plus_first(i));
 }

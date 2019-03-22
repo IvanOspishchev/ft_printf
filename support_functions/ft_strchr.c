@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sindenis <sindenis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/18 13:28:20 by jblue-da          #+#    #+#             */
-/*   Updated: 2019/03/21 23:29:38 by sindenis         ###   ########.fr       */
+/*   Created: 2018/11/27 13:29:06 by nparker           #+#    #+#             */
+/*   Updated: 2019/03/21 22:47:53 by sindenis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H_
-#define FT_PRINTF_H_
+#include "support_functions.h"
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <fcntl.h>
-#include "fs_vector/fs_vector.h"
-#include "parsing/printf_parsing.h"
-#include "preparation/prepare.h"
-#include "handling/handling.h"
+char		*ft_strchr(const char *s, int c)
+{
+	int		i;
 
-/* Main function */
-int				ft_printf(char *format, ...);
-
-#endif
+	i = -1;
+	while (++i < (int)ft_strlen(s) + 1)
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+	return (NULL);
+}

@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   overflow_handle.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sindenis <sindenis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/18 13:28:20 by jblue-da          #+#    #+#             */
-/*   Updated: 2019/03/21 23:29:38 by sindenis         ###   ########.fr       */
+/*   Created: 2019/03/21 21:41:37 by sindenis          #+#    #+#             */
+/*   Updated: 2019/03/21 21:42:10 by sindenis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H_
-#define FT_PRINTF_H_
+#include "printf_parsing.h"
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <fcntl.h>
-#include "fs_vector/fs_vector.h"
-#include "parsing/printf_parsing.h"
-#include "preparation/prepare.h"
-#include "handling/handling.h"
+int overflow_handle(char *str)
+{
+	int i;
+	long long num;
 
-/* Main function */
-int				ft_printf(char *format, ...);
-
-#endif
+	if (str == NULL)
+		return (0);
+	i = 0;
+	num = 0;
+	while (str[i] && num <= 2147483647)
+	{
+		num *= 10;
+		num += str[i] - 48;
+		++i;
+	}
+	if (num > 2147483647)
+		num = 0;
+	return (num);
+}

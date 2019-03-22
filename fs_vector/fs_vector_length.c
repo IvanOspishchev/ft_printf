@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   d_type_handler.c                                   :+:      :+:    :+:   */
+/*   fs_vector_length.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblue-da <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sindenis <sindenis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/20 11:15:10 by jblue-da          #+#    #+#             */
-/*   Updated: 2019/03/20 13:24:34 by jblue-da         ###   ########.fr       */
+/*   Created: 2019/03/21 21:55:04 by sindenis          #+#    #+#             */
+/*   Updated: 2019/03/21 21:55:15 by sindenis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "fs_vector.h"
 
-void d_handler(t_fs *form_string, long long arg, char **format)
+int fs_vector_length(t_fs_vector *v)
 {
-	
+	return (v->size);
 }

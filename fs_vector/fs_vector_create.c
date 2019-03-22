@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   fs_vector_create.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sindenis <sindenis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/18 13:28:20 by jblue-da          #+#    #+#             */
-/*   Updated: 2019/03/21 23:29:38 by sindenis         ###   ########.fr       */
+/*   Created: 2019/03/21 21:52:46 by sindenis          #+#    #+#             */
+/*   Updated: 2019/03/21 21:52:54 by sindenis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H_
-#define FT_PRINTF_H_
+#include "fs_vector.h"
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <fcntl.h>
-#include "fs_vector/fs_vector.h"
-#include "parsing/printf_parsing.h"
-#include "preparation/prepare.h"
-#include "handling/handling.h"
+t_fs_vector fs_vector_create(int size)
+{
+	t_fs_vector v;
 
-/* Main function */
-int				ft_printf(char *format, ...);
-
-#endif
+	v.data = (t_fs *)malloc(sizeof(t_fs) * size);
+	v.size = 0;
+	v.capacity = size;
+	return v;
+}

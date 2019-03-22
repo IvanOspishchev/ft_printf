@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   get_type.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sindenis <sindenis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/18 13:28:20 by jblue-da          #+#    #+#             */
-/*   Updated: 2019/03/21 23:29:38 by sindenis         ###   ########.fr       */
+/*   Created: 2019/03/21 21:44:04 by sindenis          #+#    #+#             */
+/*   Updated: 2019/03/21 22:51:56 by sindenis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H_
-#define FT_PRINTF_H_
+#include "printf_parsing.h"
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <fcntl.h>
-#include "fs_vector/fs_vector.h"
-#include "parsing/printf_parsing.h"
-#include "preparation/prepare.h"
-#include "handling/handling.h"
+char get_type(char **str)
+{
+	char type;
 
-/* Main function */
-int				ft_printf(char *format, ...);
-
-#endif
+	type = 0;
+	while (**str != '\0') {
+		if ((ft_isalpha(**str) || **str == '%')  && **str != 'l' && **str != 'h' && **str != 'L')
+		{
+			type = **str;
+			(*str)++;
+			break;
+		}
+		(*str)++;
+	}
+	return (type);
+}

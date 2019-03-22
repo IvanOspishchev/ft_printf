@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   fs_copy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sindenis <sindenis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/18 13:28:20 by jblue-da          #+#    #+#             */
-/*   Updated: 2019/03/21 23:29:38 by sindenis         ###   ########.fr       */
+/*   Created: 2019/03/21 21:46:29 by sindenis          #+#    #+#             */
+/*   Updated: 2019/03/21 21:55:22 by sindenis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H_
-#define FT_PRINTF_H_
+#include "fs_vector.h"
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <fcntl.h>
-#include "fs_vector/fs_vector.h"
-#include "parsing/printf_parsing.h"
-#include "preparation/prepare.h"
-#include "handling/handling.h"
-
-/* Main function */
-int				ft_printf(char *format, ...);
-
-#endif
+void fs_copy(t_fs *new_form_string, t_fs *form_string)
+{
+	new_form_string->flags		= ft_strdup(form_string->flags);
+	new_form_string->width		= form_string->width;
+	new_form_string->precision	= form_string->precision;
+	new_form_string->size		= ft_strdup(form_string->size);
+	new_form_string->type		= form_string->type;
+}

@@ -6,7 +6,7 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/25 13:45:09 by nparker           #+#    #+#             */
-/*   Updated: 2019/03/18 13:39:07 by jblue-da         ###   ########.fr       */
+/*   Updated: 2019/03/22 13:55:03 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ int					ft_pow(int n, int power);
 int					ft_hex_to_dec(char *str);
 int					ft_min(int n, int m);
 void				ft_strpush(char **str1, char str2);
+int					ft_count_digits(int nb);
+
 
 typedef struct		s_list
 {

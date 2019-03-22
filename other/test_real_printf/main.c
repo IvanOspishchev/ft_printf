@@ -58,9 +58,10 @@ int main(void)
 	printf("%c\n", d);
 	printf("%Lf\n", d);
 
+	printf("\n%.0001f\n", 34.56789565);
 
 
-	printf("\n%+-0   4ld", e);
+	printf("%Lllhd\n", 66000);
 
 	return (0);	
 } 	

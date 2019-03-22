@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   support_functions.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sindenis <sindenis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/18 13:28:20 by jblue-da          #+#    #+#             */
-/*   Updated: 2019/03/21 23:29:38 by sindenis         ###   ########.fr       */
+/*   Created: 2019/03/21 21:58:28 by sindenis          #+#    #+#             */
+/*   Updated: 2019/03/21 22:48:04 by sindenis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H_
-#define FT_PRINTF_H_
+#ifndef SUPPORT_FUNCTIONS_H_
+#define SUPPORT_FUNCTIONS_H_
 
 #include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <fcntl.h>
-#include "fs_vector/fs_vector.h"
-#include "parsing/printf_parsing.h"
-#include "preparation/prepare.h"
-#include "handling/handling.h"
 
-/* Main function */
-int				ft_printf(char *format, ...);
+void	ft_strdel(char **as);
+char	*ft_strdup(const char *s1);
+size_t	ft_strlen(const char *s);
+void    ft_strpush(char **str1, char str2);
+int		ft_isalpha(int c);
+int     ft_isdigit(int c);
+char	*ft_strchr(const char *s, int c);
 
 #endif

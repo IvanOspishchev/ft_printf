@@ -1,9 +1,9 @@
-#include "../ft_printf.h"
+#include "handling.h"
 
-void handler_item(va_list *args, t_fs *form_string, char **format)
+static void handler_item(va_list *args, t_fs *form_string, char **format)
 {
 	if (form_string->type == 'd')
-		d_handler(form_stirng, va_arg(*args, long long), format);
+		d_handler(form_string, va_arg(*args, long long), format);
 	else if (form_string->type == 'i')
 		i_handler(form_string, va_arg(*args, long long), format);
 	else if (form_string->type == 'o')

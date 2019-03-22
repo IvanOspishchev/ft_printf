@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   get_width.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sindenis <sindenis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/18 13:28:20 by jblue-da          #+#    #+#             */
-/*   Updated: 2019/03/21 23:29:38 by sindenis         ###   ########.fr       */
+/*   Created: 2019/03/21 21:39:27 by sindenis          #+#    #+#             */
+/*   Updated: 2019/03/21 21:42:04 by sindenis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H_
-#define FT_PRINTF_H_
+#include "printf_parsing.h"
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <fcntl.h>
-#include "fs_vector/fs_vector.h"
-#include "parsing/printf_parsing.h"
-#include "preparation/prepare.h"
-#include "handling/handling.h"
+int get_width(char **str)
+{
 
-/* Main function */
-int				ft_printf(char *format, ...);
+	int num_width;
+	char *str_width;
 
-#endif
+	str_width = NULL;
+	while (**str && ft_isdigit(**str))
+	{
+		ft_strpush(&str_width, **str);
+		(*str)++;
+	}
+	num_width = overflow_handle(str_width);
+	ft_strdel(&str_width);
+	return (num_width);
+}
