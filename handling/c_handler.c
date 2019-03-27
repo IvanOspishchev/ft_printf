@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arr_zero.c                                         :+:      :+:    :+:   */
+/*   c_handler.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/21 21:40:54 by sindenis          #+#    #+#             */
-/*   Updated: 2019/03/25 13:46:18 by vice-wra         ###   ########.fr       */
+/*   Created: 2019/03/25 16:01:33 by vice-wra          #+#    #+#             */
+/*   Updated: 2019/03/26 19:31:14 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void arr_zero(int *arr, int size)
+void			c_handler(t_fs *form_string, int arg, char **format)
 {
-	int i;
+    char *substr;
+    char sign;
 
-	i = -1;
-	while (++i < size)
-		arr[i] = 0;
+    substr = ft_strnew(1);
+	sign = get_sign(form_string, arg);
+    *substr = (char)arg;
+    width_insert(form_string, &substr);
+	ft_replace(format, substr);
 }

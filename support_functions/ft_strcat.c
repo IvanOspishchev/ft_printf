@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblue-da <jblue-da@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 13:29:06 by nparker           #+#    #+#             */
-/*   Updated: 2019/03/23 14:56:25 by jblue-da         ###   ########.fr       */
+/*   Created: 2018/11/27 13:28:21 by nparker           #+#    #+#             */
+/*   Updated: 2019/03/23 12:08:28 by jblue-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "support_functions.h"
 
-char		*ft_strchr(const char *s, int c)
+char			*ft_strcat(char *restrict s1, const char *restrict s2)
 {
-	int		i;
+	int			i;
+	int			j;
 
 	i = -1;
-	if (s == NULL)
-		return (NULL);
-	while (++i < (int)ft_strlen(s) + 1)
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-	return (NULL);
+	j = (int)ft_strlen(s1);
+	while (s2[++i])
+		s1[j++] = s2[i];
+	s1[j] = '\0';
+	return (s1);
 }

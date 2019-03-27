@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblue-da <jblue-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 13:29:06 by nparker           #+#    #+#             */
-/*   Updated: 2019/03/23 14:56:25 by jblue-da         ###   ########.fr       */
+/*   Created: 2018/12/06 17:30:55 by nparker           #+#    #+#             */
+/*   Updated: 2019/03/23 14:40:32 by jblue-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "support_functions.h"
 
-char		*ft_strchr(const char *s, int c)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
+	char	*new_str;
+	size_t	i;
+	size_t	j;
+	size_t	len1;
+	size_t	len2;
 
+	if (!s1 || !s2)
+		return (0);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	new_str = ft_strnew(len1 + len2);
+	if (!new_str)
+		return (0);
 	i = -1;
-	if (s == NULL)
-		return (NULL);
-	while (++i < (int)ft_strlen(s) + 1)
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-	return (NULL);
+	j = -1;
+	while (++i < len1)
+		*(new_str + i) = *(s1 + i);
+	while (++j < len2)
+		*(new_str + i++) = *(s2 + j);
+	*(new_str + i) = '\0';
+	return (new_str);
 }

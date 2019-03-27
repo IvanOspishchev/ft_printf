@@ -1,7 +1,6 @@
 #ifndef PRINTF_PARSING_H_
 #define PRINTF_PARSING_H_
 
-#include <stdlib.h>
 #include "../fs_vector/fs_vector.h"
 
 void    arr_zero(int *arr, int size);

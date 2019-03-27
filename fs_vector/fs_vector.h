@@ -1,7 +1,6 @@
 #ifndef FS_VECTOR_H_
 #define FS_VECTOR_H_
 
-#include <stdlib.h>
 #include "../support_functions/support_functions.h"
 
 typedef struct		s_fs {

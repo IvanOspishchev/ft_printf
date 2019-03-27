@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblue-da <jblue-da@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 13:29:06 by nparker           #+#    #+#             */
-/*   Updated: 2019/03/23 14:56:25 by jblue-da         ###   ########.fr       */
+/*   Created: 2018/11/28 12:53:39 by nparker           #+#    #+#             */
+/*   Updated: 2019/03/23 11:45:05 by jblue-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "support_functions.h"
 
-char		*ft_strchr(const char *s, int c)
+void		ft_bzero(void *s, size_t n)
 {
-	int		i;
+	size_t	i;
+	char	*ptr;
 
-	i = -1;
-	if (s == NULL)
-		return (NULL);
-	while (++i < (int)ft_strlen(s) + 1)
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-	return (NULL);
+	ptr = s;
+	i = 0;
+	if (!n)
+		return ;
+	while (i < n)
+		*(ptr + i++) = 0;
 }

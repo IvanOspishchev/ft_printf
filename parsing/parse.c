@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sindenis <sindenis@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 21:44:56 by sindenis          #+#    #+#             */
-/*   Updated: 2019/03/21 21:45:21 by sindenis         ###   ########.fr       */
+/*   Updated: 2019/03/25 14:55:26 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_parsing.h"
+#include "../ft_printf.h"
 
 void parse(char *format, t_fs_vector *form_strings)
 {

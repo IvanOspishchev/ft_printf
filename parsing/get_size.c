@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_size.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sindenis <sindenis@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 21:43:32 by sindenis          #+#    #+#             */
-/*   Updated: 2019/03/21 22:40:33 by sindenis         ###   ########.fr       */
+/*   Updated: 2019/03/25 13:47:13 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_parsing.h"
+#include "../ft_printf.h"
 
 char *get_size(char **str)
 {

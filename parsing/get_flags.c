@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_flags.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sindenis <sindenis@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 21:37:36 by sindenis          #+#    #+#             */
-/*   Updated: 2019/03/21 22:41:44 by sindenis         ###   ########.fr       */
+/*   Updated: 2019/03/25 13:46:33 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_parsing.h"
+#include "../ft_printf.h"
 
 char *get_flags(char **str)
 {

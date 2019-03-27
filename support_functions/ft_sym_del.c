@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_sym_del.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblue-da <jblue-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 13:29:06 by nparker           #+#    #+#             */
-/*   Updated: 2019/03/23 14:56:25 by jblue-da         ###   ########.fr       */
+/*   Created: 2019/03/23 14:19:32 by jblue-da          #+#    #+#             */
+/*   Updated: 2019/03/23 14:25:07 by jblue-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "support_functions.h"
 
-char		*ft_strchr(const char *s, int c)
+void ft_sym_del(char **str, char c)
 {
 	int		i;
+	char	*new_str;
 
-	i = -1;
-	if (s == NULL)
-		return (NULL);
-	while (++i < (int)ft_strlen(s) + 1)
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-	return (NULL);
+	i = 0;
+	new_str = NULL;
+	while ((*str)[i])
+	{
+		if ((*str)[i] != c)
+			ft_strpush(&new_str, (*str)[i]);
+		++i;
+	}
+	free(*str);
+	*str = new_str;
 }

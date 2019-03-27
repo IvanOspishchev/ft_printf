@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblue-da <jblue-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 13:29:06 by nparker           #+#    #+#             */
-/*   Updated: 2019/03/23 14:56:25 by jblue-da         ###   ########.fr       */
+/*   Created: 2018/12/06 17:18:33 by nparker           #+#    #+#             */
+/*   Updated: 2019/03/23 14:42:26 by jblue-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "support_functions.h"
 
-char		*ft_strchr(const char *s, int c)
+char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int		i;
+	char	*new_str;
+	size_t	i;
 
-	i = -1;
-	if (s == NULL)
-		return (NULL);
-	while (++i < (int)ft_strlen(s) + 1)
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-	return (NULL);
+	i = 0;
+	if (!s)
+		return (0);
+	new_str = ft_strnew(len);
+	if (!new_str)
+		return (0);
+	while (i < len)
+		*(new_str + i++) = *(s + start++);
+	*(new_str + i) = '\0';
+	return (new_str);
 }

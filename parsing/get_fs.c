@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_fs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sindenis <sindenis@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 21:49:00 by sindenis          #+#    #+#             */
-/*   Updated: 2019/03/21 22:40:02 by sindenis         ###   ########.fr       */
+/*   Updated: 2019/03/25 13:46:41 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_parsing.h"
+#include "../ft_printf.h"
 
 void get_fs(char **str, t_fs *form_string)
 {

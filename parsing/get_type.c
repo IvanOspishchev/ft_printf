@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_type.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sindenis <sindenis@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 21:44:04 by sindenis          #+#    #+#             */
-/*   Updated: 2019/03/21 22:51:56 by sindenis         ###   ########.fr       */
+/*   Updated: 2019/03/25 13:47:20 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_parsing.h"
+#include "../ft_printf.h"
 
 char get_type(char **str)
 {

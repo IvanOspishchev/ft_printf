@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_precision.c                                    :+:      :+:    :+:   */
+/*   ft_count_digits.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/21 21:42:44 by sindenis          #+#    #+#             */
-/*   Updated: 2019/03/25 13:46:56 by vice-wra         ###   ########.fr       */
+/*   Created: 2019/03/25 17:11:24 by vice-wra          #+#    #+#             */
+/*   Updated: 2019/03/25 17:15:20 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "support_functions.h"
 
-int get_precision(char **str)
+int ft_count_digits(int n)
 {
-	char	*str_precision;
-	int		num_precision;
+    int i;
 
-	str_precision = NULL;
-	if (**str != '.')
-		return (0);
-	(*str)++;
-	if (**str == '-')
-		return (0);
-	while (**str && ft_isdigit(**str))
-	{
-		ft_strpush(&str_precision, **str);
-		(*str)++;
-	}
-	num_precision = overflow_handle(str_precision);
-	ft_strdel(&str_precision);
-	return (num_precision);
+    i = 1;
+    while ((n = n / 10) != 0)
+        i++;
+    return (i);
 }
