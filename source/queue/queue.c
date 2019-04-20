@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 13:12:58 by nparker           #+#    #+#             */
-/*   Updated: 2019/04/17 13:13:00 by nparker          ###   ########.fr       */
+/*   Created: 2019/04/20 16:29:05 by nparker           #+#    #+#             */
+/*   Updated: 2019/04/20 16:29:07 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,16 +151,6 @@ size_t queue_len(t_queue *q)
 int queue_is_empty(t_queue *q)
 {
     return (queue_len(q) == 0);
-}
-
-void queue_print(t_queue *q)
-{
-    t_iterator i = first(q);
-
-    while (i.node != NULL) {
-        printf(i.node != q->tail ? "%s <=> " : "%s\n", fetch(&i));
-        next(&i);
-    }
 }
 
 void queue_destroy(t_queue *q)

@@ -1,7 +1,7 @@
 #ifndef FS_VECTOR_H_
 #define FS_VECTOR_H_
 
-#include "../support_functions/support_functions.h"
+#include "../ft_printf.h"
 
 typedef struct		s_fs {
 	char			*flags;

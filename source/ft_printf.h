@@ -6,7 +6,7 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 13:28:20 by jblue-da          #+#    #+#             */
-/*   Updated: 2019/04/17 14:15:45 by nparker          ###   ########.fr       */
+/*   Updated: 2019/04/20 16:41:36 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,17 @@ typedef struct		s_char_vec
 union
 {
 	long double		d_num;
-	long long		ll_num;
+	struct			s_double
+	{
+		__uint128_t mantissa:64;
+		__uint128_t exponent:15;
+		__uint128_t sign:1;
+	}				t_double;
 }					t;
 
 /* Main function */
 int				ft_printf(char *format, ...);
-void			decide(t_queue *q, t_char_vec *cvec, va_list *args);
+void			decide(t_queue *q, t_string *cust_str, va_list *args);
 void			get_queue(char *format, t_queue *queue);
 void            arr_zero(int *arr, int size);
 char            *get_flags(char **str);
@@ -98,7 +103,8 @@ void			o_handler(t_fs *form_string, unsigned  long long arg, char **format);
 void			u_handler(t_fs *form_string, unsigned long long arg, char **format);
 void			x_handler(t_fs *form_string, unsigned long long arg, char **format);
 void			xx_handler(t_fs *form_string, long long arg, char **format);
-void			f_handler(t_fs *form_string, long double arg, char **format);
+void			lf_handler(t_fs *form_string, long double arg, char **format);
+void			f_handler(t_fs *form_string, double arg, char **format);
 void			c_handler(t_fs *form_string, int arg, char **format);
 void			s_handler(t_fs *form_string, char *arg, char **format);
 void			p_handler(t_fs *form_string, long long arg, char **format);
@@ -118,6 +124,13 @@ void			u_cast(t_fs *form_string, unsigned long long *arg);
 char			*dec_to_octal(unsigned long long n);
 void			handler_item(va_list *args, t_fs *form_string, char **format);
 void			cast(t_fs *form_string, long long *arg);
+t_string		cust_strsub(t_string *str, unsigned int start, size_t len);
+char			f_get_sign(t_fs *form_string, long double arg);
+void			do_bignum_arithm(t_bignum *num, int precision);
+t_bignum		*get_the_bits(long double arg);
+char			*cust_strjoin_left(t_string *s1, char *s2);
+char			*cust_strjoin_right(char *s1, t_string *s2);
+char			*cust_strdup(t_string *src);
 
 /* Char_vec function */
 

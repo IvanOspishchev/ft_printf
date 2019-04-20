@@ -6,16 +6,16 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/30 13:22:00 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/04/17 13:18:47 by nparker          ###   ########.fr       */
+/*   Updated: 2019/04/20 16:35:19 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void ft_toupper(char **str)
+void		ft_toupper(char **str)
 {
 	int		i;
-	
+
 	i = 0;
 	if (*str == NULL)
 		return ;

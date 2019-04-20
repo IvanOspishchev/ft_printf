@@ -6,7 +6,7 @@
 #    By: nparker <nparker@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/26 13:24:28 by nparker           #+#    #+#              #
-#    Updated: 2019/04/17 16:58:03 by nparker          ###   ########.fr        #
+#    Updated: 2019/04/20 16:48:06 by nparker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME := libftprintf.a
 
 FLAGS := -Wall -Wextra -Werror
 
-SRC_DIR := source/char_vector/ \
+SRC_DIR := source/string/ \
 			source/fs_vector/ source/handling/ source/longarifm/ source/parsing/ \
  			source/preparation/ source/queue/ source/support_functions/ source/
 

@@ -6,18 +6,18 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 17:11:24 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/04/17 13:17:07 by nparker          ###   ########.fr       */
+/*   Updated: 2019/04/20 16:30:07 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int ft_count_digits(int n)
+int		ft_count_digits(int n)
 {
-    int i;
+	int i;
 
-    i = 1;
-    while ((n = n / 10) != 0)
-        i++;
-    return (i);
+	i = 1;
+	while ((n = n / 10) != 0)
+		i++;
+	return (i);
 }

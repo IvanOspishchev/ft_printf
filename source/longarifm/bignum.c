@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 13:11:58 by nparker           #+#    #+#             */
-/*   Updated: 2019/04/17 13:12:00 by nparker          ###   ########.fr       */
+/*   Created: 2019/04/20 16:27:38 by nparker           #+#    #+#             */
+/*   Updated: 2019/04/20 16:27:39 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -220,8 +220,7 @@ t_bignum        bin_divide(t_bignum *l)
 	t_bignum    res;
     char        rem;
 
-    res.int_part = str_create_size(10);
-    res.frac_part = str_create_size(10);
+    res = big_num_create_by_size(l->sign, 1, 1);
 	rem = divide(l->int_part, &res.int_part);
 	divide_frac(l->frac_part, &res.frac_part, rem);
 	return (res);

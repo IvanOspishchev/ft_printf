@@ -6,25 +6,25 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 17:25:43 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/04/17 13:17:48 by nparker          ###   ########.fr       */
+/*   Updated: 2019/04/20 16:33:46 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-char *ft_rev_str(char *str)
+char		*ft_rev_str(char *str)
 {
-    char *res;
-    int len;
-    int i;
+	char	*res;
+	int		len;
+	int		i;
 
-    i = 0;
-    len = ft_strlen(str);
-    if (str == NULL)
-        return (NULL);
-    res = ft_strnew(len);
-    res[len] = '\0';
-    while (len-- > 0)
-        res[len] = str[i++];
-    return (res);
+	i = 0;
+	len = ft_strlen(str);
+	if (str == NULL)
+		return (NULL);
+	res = ft_strnew(len);
+	res[len] = '\0';
+	while (len-- > 0)
+		res[len] = str[i++];
+	return (res);
 }
