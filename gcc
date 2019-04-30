@@ -1,1 +1,0 @@
-gcc ft_printf.c main.c support_functions/*.c handling/*.c queue/*.c preparation/*.c parsing/*.c string/*.c cust_strsub.c fs_vector/*.c longarifm/*.c -g
