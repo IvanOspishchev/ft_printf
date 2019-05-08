@@ -6,7 +6,7 @@
 #    By: nparker <nparker@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/26 13:24:28 by nparker           #+#    #+#              #
-#    Updated: 2019/04/30 13:54:25 by nparker          ###   ########.fr        #
+#    Updated: 2019/05/08 13:47:56 by nparker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ CC := gcc
 NAME := libftprintf.a
 
 FLAGS := -Wall -Wextra -Werror
+
+LIBFT := LIBFT
 
 SRC_DIR := source/
 
@@ -139,6 +141,8 @@ OBJECTS := $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 all: directory $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJECTS)
+	@make -C $(LIBFT)
+	@cp libft/libft.a ./$(NAME)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
 
@@ -152,9 +156,11 @@ $(OBJ_DIR):
 
 clean:
 	@rm -rf $(OBJ_DIR)
+	@make clean -C $(LIBFT)
 
 fclean:	clean
 	@rm -rf $(NAME)
+	@make fclean -C $(LIBFT)
 re:
 	@make fclean
 	@make all
